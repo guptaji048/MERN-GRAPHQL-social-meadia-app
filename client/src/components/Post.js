@@ -56,18 +56,21 @@ export default function Post(props) {
         <h2>Create a post</h2>
         <Form.Field>
           <Form.Input
+            label="Image"
+            name="photo"
+            type="file"
+            onChange={uploadImage}
+            error={errors.photo_url ? true : false}
+          />
+    
+          <Form.Input
             label="Title"
             type="text"
             name="title"
             placeholder="Title of image"
             value={title}
             onChange={handleChange}
-          />
-          <Form.Input
-            label="Image"
-            name="photo"
-            type="file"
-            onChange={uploadImage}
+            error={errors.title ? true : false}
           />
 
           <Button type="submit" color="yellow" onClick={onSubmit}>
