@@ -29,6 +29,10 @@ or others.
 * User can alse delete his/her Image Post.
 * Only Authenticated User can like or Post Images. <br>
 
+##TODO : <br>
+* Pagination
+* User Detail Page
+
 ## Start Server : <br>
 ```
 npm run serve
