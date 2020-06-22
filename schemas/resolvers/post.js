@@ -2,6 +2,7 @@ const { AuthenticationError, UserInputError } = require("apollo-server");
 
 const Post = require("../../models/post");
 const isAuthenticated = require("../../validators/authentication");
+const { validatePostInput } = require("../../validators/validate");
 
 module.exports = {
   Query: {
@@ -29,11 +30,9 @@ module.exports = {
   Mutation: {
     async createPost(_, { loginInput: { title, photo_url } }, context) {
       const user = isAuthenticated(context);
-      if (title.trim() === "") {
-        throw new Error("Post must have a title");
-      }
-      if (photo_url.trim() === "") {
-        throw new Error("Post must have an Image");
+      const { valid, errors } = validatePostInput(title, photo_url);
+      if (!valid) {
+        throw new UserInputError("Errors", { errors });
       }
       const newPost = new Post({
         title,
