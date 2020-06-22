@@ -20,6 +20,12 @@ This is a MERN + GraphQl Social Media web app where user can post an Image and c
 * cloudinary
 * Semantic-ui <br>
 
+## Home Screen (Before Login) : <br>
+![alt text](https://graphql-images.s3.amazonaws.com/unlogged.png)
+
+## Home Screen (After Login) : <br>
+![alt text](https://graphql-images.s3.amazonaws.com/logged.png)
+
 ## Features : <br>
 * User can create a post by a single image and a title attached to that
 image
@@ -29,7 +35,7 @@ or others.
 * User can alse delete his/her Image Post.
 * Only Authenticated User can like or Post Images. <br>
 
-##TODO : <br>
+## TODO : <br>
 * Pagination
 * User Detail Page
 
